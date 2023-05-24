@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+    <!-- <style>
+        body {
+          background-image: url("{% static '/static/css/traffic.jpg' %}" )  no-repeat center center/ cover;
+          padding-left: 30%;
+          padding-top: 30%;
+          padding-right: 30%;
+        }
+    </style> -->
+</head>
+<body>
+    <div data-collapse="small" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="nav-bar w-nav">
+        <div class="nav-container w-container">
+            <div class="logo-div">
+                <a href="#" aria-current="page" class="logotext"><b>Anveshak</b></a>
+            </div>
+
+            <nav role="navigation" class="nav-content w-nav-menu">
+                <div class="nav-menu">
+                    <a href="{% url 'home' %}" class="nav-link w-nav-link">Home</a>
+                    <a href="{% url 'index' %}" class="nav-link w-nav-link">Past History</a>
+                    <a href="{% url 'guide' %}" class="nav-link w-nav-link" style="color:#710101;"><b>Guide</b></a>
+                    <a href="{% url 'notify' %}" class="nav-link w-nav-link">Notification</a>
+                </div>
+                
+                <div class="nav-cta-button-container">
+                    <a href="#" class="nav-link w-nav-link"><b>Helpline Number  :  XXXXXX8769</b></a>
+                </div>
+                <div class="nav-cta-button-container">
+                    {% comment %}
+                    <a href="/home" class="nav-link cta-button1 w-nav-link">Log In</a>
+                    {% endcomment %}
+                    <a href="/login" class="nav-link cta-button w-nav-link"
+                      >Log out</a
+                    >
+                  </div>
+            </nav>
+            <div class="menu-button w-nav-button">
+                <img src="https://assets.website-files.com/62aee78456e4207786ac4d18/62aee78456e4200f2eac4d49_Menu%20Icon.svg"
+                    loading="lazy" width="24" alt="" class="menu-icon" />
+            </div>
+        </div>
+    </div>
+    <img src="/static/css/traffic.jpg" >
+</body>
+</html>

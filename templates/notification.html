@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Notification</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css" />
+
+    <link href="https://assets.website-files.com/62aee78456e4207786ac4d18/62b0fad1a8cf6a4c26b3cb5e_Faivcon%2032.svg"
+        rel="shortcut icon" type="image/x-icon" />
+    <link href="https://assets.website-files.com/62aee78456e4207786ac4d18/62b0fad95898ce119a80c68e_Faivcon%20256.svg"
+        rel="apple-touch-icon" />
+</head>
+
+<body>
+    <div data-collapse="small" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="nav-bar w-nav">
+        <div class="nav-container w-container">
+            <div class="logo-div">
+                <a href="#" aria-current="page" class="logotext"><b>Anveshak</b></a>
+            </div>
+
+            <nav role="navigation" class="nav-content w-nav-menu">
+                <div class="nav-menu">
+                    <a href="{% url 'home' %}" class="nav-link w-nav-link">Home</a>
+                    <a href="{% url 'index' %}" class="nav-link w-nav-link">Past History</a>
+                    <a href="{% url 'guide' %}" class="nav-link w-nav-link">Guide</a>
+                    <a href="{% url 'notify' %}" class="nav-link w-nav-link" style="color:#710101;"><b>Notification</b></a>
+                </div>
+                
+                <div class="nav-cta-button-container">
+                    <a href="#" class="nav-link w-nav-link"><b>Helpline Number  :  XXXXXX8769</b></a>
+                </div>
+                <div class="nav-cta-button-container">
+                    {% comment %}
+                    <a href="/home" class="nav-link cta-button1 w-nav-link">Log In</a>
+                    {% endcomment %}
+                    <a href="/login" class="nav-link cta-button w-nav-link"
+                      >Log out</a
+                    >
+                  </div>
+            </nav>
+            <div class="menu-button w-nav-button">
+                <img src="https://assets.website-files.com/62aee78456e4207786ac4d18/62aee78456e4200f2eac4d49_Menu%20Icon.svg"
+                    loading="lazy" width="24" alt="" class="menu-icon" />
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <div class="section light-color-gradient  wf-section" style="padding-top:3%">
+            <div class="containers w-container">
+                <div class="text-box _1200px center-align ">
+                    <h2 class="heading h2">Notifications</h2>
+                    <br>
+                    {% for feature in features %}
+                    <div class="card2" style="width: 100%;">
+                        <div class="card-body">
+                            <div class="grid">
+                                <span class="card-text"
+                                    style="color: #000; font-size: larger; font-weight: bold;text-align: left;margin-left: 80px;">Image was successfully sent !</span>
+                                <span class="card-text"
+                                    style="color: #000; font-size: larger; font-weight: bold;text-align: right;margin-right: 80px;">{{feature.dated}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Login</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="{% static '/css/styles.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://assets.website-files.com/62aee78456e4207786ac4d18/62b0fad1a8cf6a4c26b3cb5e_Faivcon%2032.svg"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link
+      href="https://assets.website-files.com/62aee78456e4207786ac4d18/62b0fad95898ce119a80c68e_Faivcon%20256.svg"
+      rel="apple-touch-icon"
+    />
+  </head>
+
+  <body>
+    <div
+      data-collapse="small"
+      data-animation="default"
+      data-duration="400"
+      data-easing="ease"
+      data-easing2="ease"
+      role="banner"
+      class="nav-bar w-nav"
+    >
+      <div class="nav-container w-container">
+        <div class="logo-div">
+          <a href="#" aria-current="page" class="logotext"><b>Anveshak</b></a>
+        </div>
+
+       
+
+        <nav role="navigation" class="nav-content w-nav-menu">
+          <div class="nav-menu">
+            {% comment %} <a href="" class="nav-link w-nav-link">Home</a> {% endcomment %}
+            <a href="#" class="nav-link w-nav-link">About Us</a>
+          </div>
+
+          <div class="nav-cta-button-container">
+            {% comment %}
+            <a href="/home" class="nav-link cta-button1 w-nav-link">Log In</a>
+            {% endcomment %}
+            <a href="/register" class="nav-link cta-button w-nav-link"
+              >Register</a
+            >
+          </div>
+        </nav>
+        <div class="menu-button w-nav-button">
+          <img
+            src="https://assets.website-files.com/62aee78456e4207786ac4d18/62aee78456e4200f2eac4d49_Menu%20Icon.svg"
+            loading="lazy"
+            width="24"
+            alt=""
+            class="menu-icon"
+          />
+        </div>
+      </div>
+    </div>
+
+    {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <strong>{{ message }} </strong>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+    <div class="page-wrapper">
+      <div class="section light-color-gradient wf-section">
+        <div class="container1">
+          <div class="w-layout-grid hero-grid">
+            <img
+              src="\static\assets\client.jpg"
+              loading="eager"
+              width="470"
+              alt=""
+              class="hero-illustration"
+            />
+            <div class="text-box _500px">
+              <h1 class="heading h1">Login</h1>
+              <br />
+              <br />
+              <form id="loginform" action="" method="POST">
+                {% csrf_token %}
+                <label for="Email-2" class="form-label" , name="username"
+                  >Email address or username:</label
+                >
+                <input
+                  type="text"
+                  name="username"
+                  class="text-field no-margin w-input"
+                  maxlength="256"
+                  name="email"
+                  data-name="Email 2"
+                  placeholder="Enter your email or username"
+                  id="email"
+                  required
+                />
+                <br />
+                <label for="Email-2" class="form-label" name="pass"
+                  >Password:</label
+                >
+                <input
+                  type="password"
+                  name="pass"
+                  class="text-field no-margin w-input"
+                  maxlength="256"
+                  placeholder="Enter password"
+                  id="pass"
+                  required
+                />
+                <br />
+                <div class="container2 text-center">
+                  <div class="row">
+                    <span class="col">
+                      <input type='submit'
+                        value='Login'
+                        class="button w-button"
+                        style="margin-top: 15px"
+                        ></input
+                      >
+                    </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="col">
+                      <a class="account-label" href="/register"
+                        >Don't have an Account ?</a
+                      >
+                    </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
